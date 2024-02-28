@@ -1,1 +1,1 @@
-https://github.com/nazka/temp_repo
+https://nazka.github.io/temp_repo/
