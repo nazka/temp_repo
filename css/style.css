@@ -25,6 +25,20 @@ body {
   100% { transform: translateX(calc(-100% + var(--animation-width))) }
 }
 
+@keyframes mountain {
+  0% { transform: rotate(0); }
+  40% { transform: rotate(0); }
+  50% { transform: rotate(15deg); }
+  75% { transform: rotate(0deg); }
+}
+
+@keyframes mountain-bike {
+  0% { transform: rotate(0); }
+  40% { transform: rotate(0); }
+  50% { transform: rotate(15deg) translateY(15px); }
+  75% { transform: rotate(0deg); }
+}
+
 .animation {
   position: relative;
   overflow: hidden;
@@ -33,6 +47,20 @@ body {
   height: var(--animation-height);
   width: var(--animation-width);
   background-color: white;
+}
+
+.mountain-road-animation {
+  height: 100%;
+  animation: mountain linear 60s infinite;
+}
+
+.mountain-cyclist-animation {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  animation: mountain-bike linear 60s infinite;
 }
 
 .animation__cyclist {
@@ -48,65 +76,68 @@ body {
   animation: sprite 1s steps(4) infinite;
 }
 
-.animation__background {
+.animation__scenery {
   position: absolute;
   bottom: 0;
   transform: translateY(calc(-1 * (var(--road-height) - 140px)));
   
   height: 100%;
+  width: 100%;
 }
 
-.animation__background__scenes {
+.animation__scenery__scenes {
   position: absolute;
   top: 0;
   
   display: flex;
   height: 100%;
+}
 
+.animation__scenery__scenes--road {
   animation: moveScene linear 5s infinite reverse;
 }
 
-.animation__background__scenes--scenery {
-  animation: moveScene linear 40s infinite reverse;
+.animation__scenery__scenes--background {
+  animation: moveScene linear 60s infinite reverse;
 }
 
-.animation__background__scenes--sky {
-  animation: moveScene linear 80s infinite;
+.animation__scenery__scenes--sky {
+  animation: moveScene linear 120s infinite;
 }
 
-.animation__background__scenes__scene {
+.animation__scenery__scenes__scene {
   height: 100%;
   min-width: var(--animation-width);
 }
 
-.animation__background__scenes__scene--flat {
+.animation__scenery__scenes__scene--flat {
   background: url('../img/background/flat.svg');
 }
 
-.animation__background__scenes__scene--trees {
+.animation__scenery__scenes__scene--trees {
   background: url('../img/background/trees.svg');
 }
 
-.animation__background__scenes__scene--village {
+.animation__scenery__scenes__scene--village {
   background: url('../img/background/village.svg');
 }
 
-.animation__background__scenes__scene--populus {
+.animation__scenery__scenes__scene--populus {
   background: url('../img/background/populus.svg');
 }
 
-.animation__background__scenes__scene--birds {
+.animation__scenery__scenes__scene--birds {
   background: url('../img/background/birds.svg');
 }
 
-.animation__background__scenes__scene--airplane {
+.animation__scenery__scenes__scene--airplane {
   background: url('../img/background/airplane.svg');
 }
 
-.animation__background__scenes__scene--finish {
+.animation__scenery__scenes__scene--finish {
   background: url('../img/background/finish.svg');
 }
 
-.animation__background__scenes__scene--finish-front-part {
+.animation__scenery__scenes__scene--finish-front-part {
   background: url('../img/background/finish-front-part.svg');
 }
