@@ -67,11 +67,11 @@ body {
 }
 
 .animation__background__scenes--scenery {
-  animation: moveScene linear 20s infinite reverse;
+  animation: moveScene linear 40s infinite reverse;
 }
 
 .animation__background__scenes--sky {
-  animation: moveScene linear 35s infinite reverse;
+  animation: moveScene linear 50s infinite reverse;
 }
 
 .animation__background__scenes__scene {
