@@ -71,7 +71,7 @@ body {
 }
 
 .animation__background__scenes--sky {
-  animation: moveScene linear 50s infinite reverse;
+  animation: moveScene linear 80s infinite;
 }
 
 .animation__background__scenes__scene {
