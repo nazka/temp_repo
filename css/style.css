@@ -75,7 +75,7 @@ body {
   width: var(--cyclist-width);
   background:  url('../img/byclist/byclist.svg') no-repeat;
   
-  animation: sprite 1s steps(4) infinite;
+  animation: sprite 1s steps(5) infinite;
 }
 
 .animation__scenery {
