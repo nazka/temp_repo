@@ -1,0 +1,112 @@
+body {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+:root {
+  --animation-height: 768px;
+  --animation-width: 1366px;
+  --road-height: 140px;
+  --cyclist-height: 148px;
+  --cyclist-width: 187px;
+}
+
+@keyframes sprite {
+  from { background-position: 0% 0; }
+  to { background-position: 100% 0; }
+}
+
+@keyframes moveScene {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-100% + var(--animation-width))) }
+}
+
+.animation {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  height: var(--animation-height);
+  width: var(--animation-width);
+  background-color: white;
+}
+
+.animation__cyclist {
+  position: absolute;
+  bottom: calc(var(--road-height) - 3px);
+  left: 50%;
+  transform: translateX(-50%);
+
+  height: var(--cyclist-height);
+  width: var(--cyclist-width);
+  background:  url('../img/byclist/byclist.svg') no-repeat;
+  
+  animation: sprite 1s steps(4) infinite;
+}
+
+.animation__background {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(calc(-1 * (var(--road-height) - 140px)));
+  
+  height: 100%;
+}
+
+.animation__background__scenes {
+  position: absolute;
+  top: 0;
+  
+  display: flex;
+  height: 100%;
+
+  animation: moveScene linear 5s infinite reverse;
+}
+
+.animation__background__scenes--scenery {
+  animation: moveScene linear 20s infinite reverse;
+}
+
+.animation__background__scenes--sky {
+  animation: moveScene linear 35s infinite reverse;
+}
+
+.animation__background__scenes__scene {
+  height: 100%;
+  min-width: var(--animation-width);
+}
+
+.animation__background__scenes__scene--flat {
+  background: url('../img/background/flat.svg');
+}
+
+.animation__background__scenes__scene--trees {
+  background: url('../img/background/trees.svg');
+}
+
+.animation__background__scenes__scene--village {
+  background: url('../img/background/village.svg');
+}
+
+.animation__background__scenes__scene--populus {
+  background: url('../img/background/populus.svg');
+}
+
+.animation__background__scenes__scene--birds {
+  background: url('../img/background/birds.svg');
+}
+
+.animation__background__scenes__scene--airplane {
+  background: url('../img/background/airplane.svg');
+}
+
+.animation__background__scenes__scene--finish {
+  background: url('../img/background/finish.svg');
+}
+
+.animation__background__scenes__scene--finish-front-part {
+  background: url('../img/background/finish-front-part.svg');
+}
