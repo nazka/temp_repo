@@ -94,7 +94,7 @@ body {
   width: var(--cyclist-width);
   background:  url('../img/cyclist/cyclist.svg') no-repeat;
   
-  animation: sprite 1.5s steps(13) infinite;
+  animation: sprite 1.5s steps(16) infinite;
 }
 
 .animation__scenery {
