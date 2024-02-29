@@ -25,20 +25,29 @@ body {
   100% { transform: translateX(calc(-100% + var(--animation-width))) }
 }
 
-@keyframes mountain {
+@keyframes hillClimb {
   0% { transform: rotate(0); }
   40% { transform: rotate(0); }
-  50% { transform: rotate(8deg) translateY(-50px); }
-  60% { transform: rotate(8deg) translateY(-50px); }
-  75% { transform: rotate(0deg); }
+  47.5% { transform: rotate(8deg) translateY(-50px); }
+  57.5% { transform: rotate(8deg) translateY(-50px); }
+  62.5% { transform: rotate(0deg); }
 }
 
-@keyframes mountain-bike {
+@keyframes hillClimbBycicle {
   0% { transform: rotate(0); }
   40% { transform: rotate(0); }
-  50% { transform: rotate(8deg) translateY(5px) translateY(-50px); }
-  60% { transform: rotate(8deg) translateY(5px) translateY(-50px); }
-  75% { transform: rotate(0deg); }
+  47.5% { transform: rotate(8deg) translateY(5px) translateY(-50px); }
+  57.5% { transform: rotate(8deg) translateY(5px) translateY(-50px); }
+  62.5% { transform: rotate(0deg); }
+}
+
+@keyframes showPopulusWind {
+  0% { opacity: 0; }
+  30% { opacity: 0; }
+  36% { opacity: 1; }
+  38% { opacity: 1; }
+  40% { opacity: 0; }
+  100% { opacity: 0; }
 }
 
 .animation {
@@ -48,12 +57,12 @@ body {
   display: flex;
   height: var(--animation-height);
   width: var(--animation-width);
-  background-color: white;
+  background-color: #E2F2EF;
 }
 
 .mountain-road-animation {
   height: 100%;
-  animation: mountain linear 60s infinite;
+  animation: hillClimb linear 70s infinite;
 }
 
 .mountain-cyclist-animation {
@@ -62,7 +71,17 @@ body {
   left: 50%;
   transform: translateX(-50%);
 
-  animation: mountain-bike linear 60s infinite;
+  animation: hillClimbBycicle linear 70s infinite;
+}
+
+.mountain-road-animation__white-foreground {
+  position: absolute;
+  top: calc(100% - var(--road-height));
+  left: -50%;
+
+  height: 500px;
+  width: 200%;
+  background-color: white;
 }
 
 .animation__cyclist {
@@ -99,8 +118,9 @@ body {
   animation: moveScene linear 5s infinite reverse;
 }
 
-.animation__scenery__scenes--background {
-  animation: moveScene linear 60s infinite reverse;
+.animation__scenery__scenes--background,
+.animation__scenery__scenes--foreground {
+  animation: moveScene linear 70s infinite reverse;
 }
 
 .animation__scenery__scenes--sky {
@@ -128,6 +148,10 @@ body {
   background: url('../img/background/populus.svg');
 }
 
+.animation__scenery__scenes__scene--motor {
+  background: url('../img/background/motor.svg');
+}
+
 .animation__scenery__scenes__scene--birds {
   background: url('../img/background/birds.svg');
 }
@@ -142,4 +166,14 @@ body {
 
 .animation__scenery__scenes__scene--finish-front-part {
   background: url('../img/background/finish-front-part.svg');
+}
+
+.animation__scenery__scenes__scene__extra {
+  height: 100%;
+  width: 100%;
+}
+
+.animation__scenery__scenes__scene__extra--populus {
+  background: url('../img/background/populus-wind.svg');
+  animation: showPopulusWind linear 70s infinite;
 }
