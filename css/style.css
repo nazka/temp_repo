@@ -140,8 +140,8 @@ body {
   background: url('../img/background/trees.svg');
 }
 
-.animation__scenery__scenes__scene--village {
-  background: url('../img/background/village.svg');
+.animation__scenery__scenes__scene--church {
+  background: url('../img/background/church.svg');
 }
 
 .animation__scenery__scenes__scene--populus {
@@ -150,6 +150,10 @@ body {
 
 .animation__scenery__scenes__scene--motor {
   background: url('../img/background/motor.svg');
+}
+
+.animation__scenery__scenes__scene--village {
+  background: url('../img/background/village.svg');
 }
 
 .animation__scenery__scenes__scene--birds {
